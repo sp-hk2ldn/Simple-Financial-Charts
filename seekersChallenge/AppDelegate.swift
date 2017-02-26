@@ -9,17 +9,43 @@
 import UIKit
 import Fabric
 import TwitterKit
+import GoogleSignIn
+import Google
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate/*, GIDSignInDelegate*/ {
 
     var window: UIWindow?
-
-
+    
+    fileprivate func configureTwitterSignIn() {
+        Fabric.with([Twitter.self])
+    }
+    
+    fileprivate func configureGoogleSignIn(){
+        var configError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configError)
+        assert(configError == nil, "Error configuring Google \(configError)")
+//        GIDSignIn.sharedInstance().delegate = self
+    }
+    
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if error == nil {
+//            print(user)
+//        }
+//    }
+//    
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//        if error == nil {
+//            print("\(user) signed out")
+//        }
+//    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Fabric.with([Twitter.self])
+        configureTwitterSignIn()
+        configureGoogleSignIn()
         return true
     }
 
@@ -43,6 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        if Twitter.sharedInstance().application(app, open: url, options: options) {
+            return true
+        }
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
 
 

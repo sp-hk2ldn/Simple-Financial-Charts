@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yqn-OQ-LHZ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="wMR-hA-Atk">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81o-8u-YS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="yqn-OQ-LHZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e5G-44-IC4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0Sg-is-LP4" kind="relationship" relationship="rootViewController" id="Yoq-CS-Hy3"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-721" y="76"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Ufx-mL-2Zq">
+            <objects>
+                <viewController title="Home" id="0Sg-is-LP4" customClass="HomeScreenViewController" customModule="seekersChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jQy-uo-win"/>
+                        <viewControllerLayoutGuide type="bottom" id="0O2-91-uaN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Txh-Xs-RGw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdT-2L-YZq">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-C7-liB">
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9Ga-C7-liB" firstAttribute="top" secondItem="LdT-2L-YZq" secondAttribute="top" constant="8" id="bd4-0S-z6g"/>
+                                    <constraint firstItem="9Ga-C7-liB" firstAttribute="leading" secondItem="LdT-2L-YZq" secondAttribute="leading" constant="8" id="jx2-yw-rCa"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YEb-Tu-wgX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="AIf-gv-pzP"/>
+                                    <constraint firstAttribute="height" constant="100" id="eAd-WF-rPa"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LdT-2L-YZq" secondAttribute="trailing" id="74c-uB-cVz"/>
+                            <constraint firstItem="YEb-Tu-wgX" firstAttribute="top" secondItem="jQy-uo-win" secondAttribute="bottom" id="7QI-Qy-fYf"/>
+                            <constraint firstItem="LdT-2L-YZq" firstAttribute="height" secondItem="YEb-Tu-wgX" secondAttribute="height" id="Pcx-Hx-POa"/>
+                            <constraint firstItem="LdT-2L-YZq" firstAttribute="leading" secondItem="YEb-Tu-wgX" secondAttribute="trailing" id="auf-cn-w1c"/>
+                            <constraint firstItem="LdT-2L-YZq" firstAttribute="top" secondItem="jQy-uo-win" secondAttribute="bottom" id="be1-N2-p3M"/>
+                            <constraint firstItem="YEb-Tu-wgX" firstAttribute="leading" secondItem="Txh-Xs-RGw" secondAttribute="leading" id="keG-pd-Ywq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jhj-12-3Hm"/>
+                    <connections>
+                        <outlet property="userNameLabel" destination="9Ga-C7-liB" id="gsu-Vw-AcB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pru-KU-EGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="269.60000000000002" y="74.212893553223395"/>
+        </scene>
+    </scenes>
+</document>

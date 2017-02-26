@@ -16,6 +16,35 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>TwitterKit</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-YQTdmu1bxz2yNOzfiIKO92qdl</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.635517223969-5dhlo5biu929ojrn6lukl4lljicuofc6</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>Deck16.seekersChallenge</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Fabric</key>
@@ -28,9 +57,9 @@
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>YQTdmu1bxz2yNOzfiIKO92qdl</string>
+					<string>ej239nUwoSxVzO3KOcNb9bQl0</string>
 					<key>consumerSecret</key>
-					<string>T8S6qHoCOOpotMTd218JjEGyVM91m04rmKS4Uy8I43zwbLLnCd</string>
+					<string>wjUhoo4Nchf0PM92zNv0erW20u0SAStOR2t6fcnKm3JFZlDpZz</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
@@ -42,7 +71,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>Login</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
