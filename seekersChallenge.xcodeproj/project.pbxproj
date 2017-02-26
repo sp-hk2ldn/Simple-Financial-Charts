@@ -30,6 +30,8 @@
 		BD83E5551E62BCCE004512A6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E5541E62BCCE004512A6 /* AppConstant.swift */; };
 		BD83E5581E62BDA8004512A6 /* MonthlyClose.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E5571E62BDA8004512A6 /* MonthlyClose.swift */; };
 		BD83E55A1E62CEC3004512A6 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E5591E62CEC3004512A6 /* StockData.swift */; };
+		BD83E55C1E62EE00004512A6 /* SelectStockAndGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E55B1E62EE00004512A6 /* SelectStockAndGraphViewController.swift */; };
+		BD83E55E1E62F2BB004512A6 /* StockPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E55D1E62F2BB004512A6 /* StockPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		BD83E5541E62BCCE004512A6 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		BD83E5571E62BDA8004512A6 /* MonthlyClose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyClose.swift; sourceTree = "<group>"; };
 		BD83E5591E62CEC3004512A6 /* StockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
+		BD83E55B1E62EE00004512A6 /* SelectStockAndGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStockAndGraphViewController.swift; sourceTree = "<group>"; };
+		BD83E55D1E62F2BB004512A6 /* StockPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockPickerViewController.swift; sourceTree = "<group>"; };
 		DD2F98EEFD4345B4CC5DD863 /* Pods_seekersChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekersChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD0316E0A402166986511E7 /* Pods_seekersChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekersChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -244,6 +248,8 @@
 			children = (
 				BD83E5491E6284EB004512A6 /* Home.storyboard */,
 				BD83E54B1E628944004512A6 /* HomeScreenViewController.swift */,
+				BD83E55B1E62EE00004512A6 /* SelectStockAndGraphViewController.swift */,
+				BD83E55D1E62F2BB004512A6 /* StockPickerViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -575,11 +581,13 @@
 				BD83E54F1E62A89F004512A6 /* YahooServiceAPI.swift in Sources */,
 				BD6AD2121E607F3C00AEDA76 /* LoginViewController.swift in Sources */,
 				BD83E5551E62BCCE004512A6 /* AppConstant.swift in Sources */,
+				BD83E55E1E62F2BB004512A6 /* StockPickerViewController.swift in Sources */,
 				BD83E5511E62A9B1004512A6 /* YahooServiceDirectory.swift in Sources */,
 				BD83E54C1E628944004512A6 /* HomeScreenViewController.swift in Sources */,
 				BD6AD2101E607F3C00AEDA76 /* AppDelegate.swift in Sources */,
 				BD83E5581E62BDA8004512A6 /* MonthlyClose.swift in Sources */,
 				BD83E5451E626F82004512A6 /* SignInDelegate.swift in Sources */,
+				BD83E55C1E62EE00004512A6 /* SelectStockAndGraphViewController.swift in Sources */,
 				BD83E55A1E62CEC3004512A6 /* StockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

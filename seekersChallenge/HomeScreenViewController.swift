@@ -17,10 +17,11 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate, ChartView
     @IBOutlet var chartView: LineChartView!
     //MARK:- IBActions
     @IBAction func searchButton(_ sender: UIButton) {
-        QuandlServiceDirectory.makeRequest(api: .getMonthlyClosingPriceForYear(ticker: "FB", startDate: "2016-02-01", endDate: "2017-01-01"), queue: nil) { (json) in
-            let monthlyClose = MonthlyClose(jsonData: json)
-            self.configureUIWithStockData(monthlyClose: monthlyClose)
-        }
+//        QuandlServiceDirectory.makeRequest(api: .getMonthlyClosingPriceForYear(ticker: "FB", startDate: "2016-02-01", endDate: "2017-01-01"), queue: nil) { (json) in
+//            let monthlyClose = MonthlyClose(jsonData: json)
+//            self.configureUIWithStockData(monthlyClose: monthlyClose)
+//        }
+        performSegue(withIdentifier: "stockChooser", sender: nil)
     }
     
     
