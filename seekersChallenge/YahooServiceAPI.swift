@@ -1,5 +1,5 @@
 //
-//  YahooServiceAPI.swift
+//  QuandlServiceAPI.swift
 //  seekersChallenge
 //
 //  Created by Stephen Parker on 26/02/2017.
@@ -9,22 +9,22 @@
 import Foundation
 import Moya
 
-enum YahooServiceAPI {
-    case getStockInformation
+enum QuandlServiceAPI {
+    case getMonthlyClosingPriceForYear(ticker: String, startDate: String, endDate: String)
 }
 
-extension YahooServiceAPI: TargetType {
+extension QuandlServiceAPI: TargetType {
     var baseURL: URL {
         switch self {
         default:
-            return YahooServiceDirectory.baseURL
+            return QuandlServiceDirectory.baseURL
         }
     }
     
     var path: String {
         switch self {
-        case .getStockInformation:
-            return "/"
+        case .getMonthlyClosingPriceForYear(let ticker, let startDate, let endDate):
+            return "datasets/WIKI/\(ticker).json?column_index=4&start_date=\(startDate)&end_date=\(endDate)&collapse=monthly&transform=diff&api_key=\(AppConstant.QUANDL_API_KEY)"
         }
     }
     

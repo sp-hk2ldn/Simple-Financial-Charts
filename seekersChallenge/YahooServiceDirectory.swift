@@ -1,5 +1,5 @@
 //
-//  YahooServiceDirectory.swift
+//  QuandlServiceDirectory.swift
 //  seekersChallenge
 //
 //  Created by Stephen Parker on 26/02/2017.
@@ -8,12 +8,13 @@
 
 import Foundation
 import Moya
+import SwiftyJSON
 
-class YahooServiceDirectory {
+class QuandlServiceDirectory {
     static var baseURL: URL {
         switch self {
         default:
-            return URL(string: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22YHOO%22%2C%22AAPL%22%2C%22GOOG%22%2C%22MSFT%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=")!
+            return URL(string: "https://www.quandl.com/api/v3/")!
         }
     }
     
@@ -23,23 +24,25 @@ class YahooServiceDirectory {
         }
     }
     
-    static var endpointClosure = { (target: YahooServiceAPI) -> Endpoint<YahooServiceAPI> in
+    static var endpointClosure = { (target: QuandlServiceAPI) -> Endpoint<QuandlServiceAPI> in
         let url = "\(target.baseURL)\(target.path)"
         let sampleResponseClosure = { EndpointSampleResponse.networkResponse(200, target.sampleData )}
 //        guard let urlWithoutPercentEncoding = url.removingPercentEncoding else { fatalError() }
-        let endpoint = Endpoint<YahooServiceAPI>.init(url: url, sampleResponseClosure: sampleResponseClosure, method: target.method, parameters: target.parameters, parameterEncoding: target.parameterEncoding, httpHeaderFields: headerAuthorization)
+        let endpoint = Endpoint<QuandlServiceAPI>.init(url: url, sampleResponseClosure: sampleResponseClosure, method: target.method, parameters: target.parameters, parameterEncoding: target.parameterEncoding, httpHeaderFields: headerAuthorization)
         return endpoint
     }
     
-    static let serviceProvider = MoyaProvider<YahooServiceAPI>(endpointClosure: endpointClosure)
+    static let serviceProvider = MoyaProvider<QuandlServiceAPI>(endpointClosure: endpointClosure)
     
-    static func makeRequest(api: YahooServiceAPI, queue: DispatchQueue?, completion:@escaping ((Response) -> Void)){
-        YahooServiceDirectory.serviceProvider.request(api, queue: queue, completion: { (result) in
+    static func makeRequest(api: QuandlServiceAPI, queue: DispatchQueue?, completion:@escaping ((JSON) -> Void)){
+        QuandlServiceDirectory.serviceProvider.request(api, queue: queue, completion: { (result) in
             switch result {
             case .success(let response):
                 do {
                     let _ = try response.filterSuccessfulStatusCodes()
-                    completion(response)
+                    let jsonResponse = try response.mapJSON()
+                    let json = JSON(jsonResponse)
+                    completion(json)
                 } catch {
                     handleApiErrorResponse(response: response)
                 }
