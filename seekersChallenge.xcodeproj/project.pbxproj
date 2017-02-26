@@ -25,6 +25,8 @@
 		BD83E5451E626F82004512A6 /* SignInDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E5441E626F82004512A6 /* SignInDelegate.swift */; };
 		BD83E54A1E6284EB004512A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD83E5491E6284EB004512A6 /* Home.storyboard */; };
 		BD83E54C1E628944004512A6 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E54B1E628944004512A6 /* HomeScreenViewController.swift */; };
+		BD83E54F1E62A89F004512A6 /* YahooServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E54E1E62A89F004512A6 /* YahooServiceAPI.swift */; };
+		BD83E5511E62A9B1004512A6 /* YahooServiceDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83E5501E62A9B1004512A6 /* YahooServiceDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		BD83E5441E626F82004512A6 /* SignInDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInDelegate.swift; sourceTree = "<group>"; };
 		BD83E5491E6284EB004512A6 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BD83E54B1E628944004512A6 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		BD83E54E1E62A89F004512A6 /* YahooServiceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooServiceAPI.swift; sourceTree = "<group>"; };
+		BD83E5501E62A9B1004512A6 /* YahooServiceDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooServiceDirectory.swift; sourceTree = "<group>"; };
 		DD2F98EEFD4345B4CC5DD863 /* Pods_seekersChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekersChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD0316E0A402166986511E7 /* Pods_seekersChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekersChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -147,6 +151,7 @@
 		BD6AD20E1E607F3C00AEDA76 /* seekersChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				BD83E54D1E62A88E004512A6 /* API */,
 				BD83E5461E62787B004512A6 /* Protocols */,
 				BD81CB981E609D6F00963B6B /* Common Files */,
 				BD81CB971E609D6200963B6B /* Views */,
@@ -233,6 +238,15 @@
 				BD83E54B1E628944004512A6 /* HomeScreenViewController.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		BD83E54D1E62A88E004512A6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BD83E54E1E62A89F004512A6 /* YahooServiceAPI.swift */,
+				BD83E5501E62A9B1004512A6 /* YahooServiceDirectory.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,7 +555,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD83E54F1E62A89F004512A6 /* YahooServiceAPI.swift in Sources */,
 				BD6AD2121E607F3C00AEDA76 /* LoginViewController.swift in Sources */,
+				BD83E5511E62A9B1004512A6 /* YahooServiceDirectory.swift in Sources */,
 				BD83E54C1E628944004512A6 /* HomeScreenViewController.swift in Sources */,
 				BD6AD2101E607F3C00AEDA76 /* AppDelegate.swift in Sources */,
 				BD83E5451E626F82004512A6 /* SignInDelegate.swift in Sources */,

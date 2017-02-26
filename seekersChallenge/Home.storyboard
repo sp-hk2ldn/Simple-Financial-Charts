@@ -11,7 +11,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81o-8u-YS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="yqn-OQ-LHZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e5G-44-IC4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e5G-44-IC4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -54,12 +54,38 @@
                                     <constraint firstAttribute="height" constant="100" id="eAd-WF-rPa"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PY2-BW-yE5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eGD-n5-l6l"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-63-KV7">
+                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="95P-zd-pTb"/>
+                                </constraints>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButton:" destination="0Sg-is-LP4" eventType="touchUpInside" id="j17-5E-vWA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PY2-BW-yE5" firstAttribute="top" secondItem="YEb-Tu-wgX" secondAttribute="bottom" constant="8" id="3bD-Cw-DuD"/>
                             <constraint firstAttribute="trailing" secondItem="LdT-2L-YZq" secondAttribute="trailing" id="74c-uB-cVz"/>
+                            <constraint firstItem="wb1-63-KV7" firstAttribute="top" secondItem="PY2-BW-yE5" secondAttribute="bottom" constant="8" id="7P7-aO-TSI"/>
                             <constraint firstItem="YEb-Tu-wgX" firstAttribute="top" secondItem="jQy-uo-win" secondAttribute="bottom" id="7QI-Qy-fYf"/>
+                            <constraint firstAttribute="trailing" secondItem="PY2-BW-yE5" secondAttribute="trailing" id="Al6-hf-O8A"/>
+                            <constraint firstItem="wb1-63-KV7" firstAttribute="leading" secondItem="Txh-Xs-RGw" secondAttribute="leading" id="Iot-7P-Ixi"/>
                             <constraint firstItem="LdT-2L-YZq" firstAttribute="height" secondItem="YEb-Tu-wgX" secondAttribute="height" id="Pcx-Hx-POa"/>
+                            <constraint firstItem="PY2-BW-yE5" firstAttribute="leading" secondItem="Txh-Xs-RGw" secondAttribute="leading" id="VBN-1T-cis"/>
+                            <constraint firstAttribute="trailing" secondItem="wb1-63-KV7" secondAttribute="trailing" id="W6j-Ew-uL9"/>
                             <constraint firstItem="LdT-2L-YZq" firstAttribute="leading" secondItem="YEb-Tu-wgX" secondAttribute="trailing" id="auf-cn-w1c"/>
                             <constraint firstItem="LdT-2L-YZq" firstAttribute="top" secondItem="jQy-uo-win" secondAttribute="bottom" id="be1-N2-p3M"/>
                             <constraint firstItem="YEb-Tu-wgX" firstAttribute="leading" secondItem="Txh-Xs-RGw" secondAttribute="leading" id="keG-pd-Ywq"/>
@@ -67,6 +93,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jhj-12-3Hm"/>
                     <connections>
+                        <outlet property="stockSearchTextField" destination="PY2-BW-yE5" id="cwg-cU-FZs"/>
                         <outlet property="userNameLabel" destination="9Ga-C7-liB" id="gsu-Vw-AcB"/>
                     </connections>
                 </viewController>

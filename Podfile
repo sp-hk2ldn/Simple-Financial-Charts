@@ -8,6 +8,9 @@ target 'seekersChallenge' do
   # Pods for seekersChallenge
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Google/SignIn'
+  pod 'Charts'
+  pod 'Alamofire', '~> 4.3'
+  pod 'Moya'
 
   target 'seekersChallengeTests' do
     inherit! :search_paths

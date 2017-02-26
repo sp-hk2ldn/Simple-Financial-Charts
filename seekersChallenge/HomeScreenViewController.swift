@@ -8,13 +8,19 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController, UITextFieldDelegate {
     //MARK:- IBOutlets
     @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var stockSearchTextField: UITextField!
+    //MARK:- IBActions
+    @IBAction func searchButton(_ sender: UIButton) {
+        
+    }
     
     
     //MARK:- Variables
     var displayName: String = ""
+    var chosenStock: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,5 +30,14 @@ class HomeScreenViewController: UIViewController {
 
     fileprivate func configureUI(){
         userNameLabel.text = displayName
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        chosenStock = textField.text!
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }
