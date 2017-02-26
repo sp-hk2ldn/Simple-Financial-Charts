@@ -21,6 +21,9 @@ xcuserdata/
 *.moved-aside
 *.xcuserstate
 
+## XCode Secrets
+Info.plist
+
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
