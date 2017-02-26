@@ -14,7 +14,9 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var stockSearchTextField: UITextField!
     //MARK:- IBActions
     @IBAction func searchButton(_ sender: UIButton) {
-        
+        YahooServiceDirectory.makeRequest(api: .getStockInformation, queue: nil) { (response) in
+            print(response)
+        }
     }
     
     

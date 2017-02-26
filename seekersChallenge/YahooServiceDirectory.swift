@@ -13,7 +13,7 @@ class YahooServiceDirectory {
     static var baseURL: URL {
         switch self {
         default:
-            return URL(string: "http://www.yahoo.com")!
+            return URL(string: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22YHOO%22%2C%22AAPL%22%2C%22GOOG%22%2C%22MSFT%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=")!
         }
     }
     
@@ -26,14 +26,14 @@ class YahooServiceDirectory {
     static var endpointClosure = { (target: YahooServiceAPI) -> Endpoint<YahooServiceAPI> in
         let url = "\(target.baseURL)\(target.path)"
         let sampleResponseClosure = { EndpointSampleResponse.networkResponse(200, target.sampleData )}
-        guard let urlWithoutPercentEncoding = url.removingPercentEncoding else { fatalError() }
-        let endpoint = Endpoint<YahooServiceAPI>.init(url: urlWithoutPercentEncoding, sampleResponseClosure: sampleResponseClosure, method: target.method, parameters: target.parameters, parameterEncoding: target.parameterEncoding, httpHeaderFields: headerAuthorization)
+//        guard let urlWithoutPercentEncoding = url.removingPercentEncoding else { fatalError() }
+        let endpoint = Endpoint<YahooServiceAPI>.init(url: url, sampleResponseClosure: sampleResponseClosure, method: target.method, parameters: target.parameters, parameterEncoding: target.parameterEncoding, httpHeaderFields: headerAuthorization)
         return endpoint
     }
     
     static let serviceProvider = MoyaProvider<YahooServiceAPI>(endpointClosure: endpointClosure)
     
-    static func makeRequest(api: YahooServiceAPI, queue: DispatchQueue?, collection: Bool, completion:@escaping ((Response) -> Void)){
+    static func makeRequest(api: YahooServiceAPI, queue: DispatchQueue?, completion:@escaping ((Response) -> Void)){
         YahooServiceDirectory.serviceProvider.request(api, queue: queue, completion: { (result) in
             switch result {
             case .success(let response):

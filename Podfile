@@ -11,6 +11,7 @@ target 'seekersChallenge' do
   pod 'Charts'
   pod 'Alamofire', '~> 4.3'
   pod 'Moya'
+  pod 'SwiftyJSON'
 
   target 'seekersChallengeTests' do
     inherit! :search_paths
