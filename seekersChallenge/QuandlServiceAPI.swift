@@ -10,7 +10,8 @@ import Foundation
 import Moya
 
 enum QuandlServiceAPI {
-    case getMonthlyClosingPriceForYear(ticker: String, startDate: String, endDate: String)
+    case getMonthlyClosingPriceDifferenceForPeriod(ticker: String, startDate: String, endDate: String)
+    case getAllStockPriceHistory(ticker: String)
 }
 
 extension QuandlServiceAPI: TargetType {
@@ -23,8 +24,10 @@ extension QuandlServiceAPI: TargetType {
     
     var path: String {
         switch self {
-        case .getMonthlyClosingPriceForYear(let ticker, let startDate, let endDate):
+        case .getMonthlyClosingPriceDifferenceForPeriod(let ticker, let startDate, let endDate):
             return "datasets/WIKI/\(ticker).json?column_index=4&start_date=\(startDate)&end_date=\(endDate)&collapse=monthly&transform=diff&api_key=\(AppConstant.QUANDL_API_KEY)"
+        case .getAllStockPriceHistory(let ticker):
+            return "datasets/WIKI/\(ticker).json?api_key=\(AppConstant.QUANDL_API_KEY)"
         }
     }
     

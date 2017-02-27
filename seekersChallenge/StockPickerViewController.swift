@@ -17,12 +17,14 @@ class StockPickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     //MARK:- Actions
     @IBAction func tapOutsidePicker(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
+        didPickStockDelegate?.didChooseStock(ticker: pickedSymbol)
     }
     
     
     //MARK:- Variables
     let stockSymbols = ["AAPL", "FB", "GOOGL"]
     var didPickStockDelegate: DidChooseStockDelegate?
+    var pickedSymbol: String = "AAPL"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,7 @@ class StockPickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        didPickStockDelegate?.didChooseStock(ticker: stockSymbols[row])
+        self.pickedSymbol = stockSymbols[row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
