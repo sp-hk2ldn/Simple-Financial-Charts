@@ -2,27 +2,27 @@
 
 if you don't have it already, install cocoapods: 
 
-gem install cocoapods
+__gem install cocoapods__
 
-then update the pod repositories
+then update the pod repositories:
 
-pod repo update
+__pod repo update__
 
-then install the required pods for the project
+then install the required pods for the project:
 
-pod install
+__pod install__
 
-load the project using the .xcworkspace extension
+load the project using the .xcworkspace extension:
 
-cmd + r in xcode to run
+__cmd + r in xcode to run__
 
 
 # project continuation
 
-next things i would add:
+__next things i would add:__
 
-user management system for multiple users, log out buttons etc
+* user management system for multiple users, log out buttons etc
 
-adjustable time interval for period of chart (api call ready, ui to be done)
+* adjustable time interval for period of chart (api call ready, ui to be done)
 
-chartview visual improvements
+* chartview visual improvements
