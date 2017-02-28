@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yqn-OQ-LHZ">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yqn-OQ-LHZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-721" y="76"/>
         </scene>
-        <!--Home-->
+        <!--Chart-->
         <scene sceneID="Ufx-mL-2Zq">
             <objects>
-                <viewController title="Home" id="0Sg-is-LP4" customClass="HomeScreenViewController" customModule="seekersChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Chart" id="0Sg-is-LP4" customClass="HomeScreenViewController" customModule="seekersChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jQy-uo-win"/>
                         <viewControllerLayoutGuide type="bottom" id="0O2-91-uaN"/>
@@ -36,13 +39,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdT-2L-YZq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stephen's chart viewer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-C7-liB">
+                                        <rect key="frame" x="20" y="8" width="335" height="29"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8K4-rP-A50">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="IcM-7t-lqk"/>
                                         </constraints>
@@ -65,29 +71,32 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-63-KV7">
-                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="609" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="95P-zd-pTb"/>
                                 </constraints>
-                                <state key="normal" title="Select Stock ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Select Stock "/>
                                 <connections>
                                     <action selector="searchButton:" destination="0Sg-is-LP4" eventType="touchUpInside" id="j17-5E-vWA"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vi9-Ye-YpN" userLabel="seperatorView">
+                                <rect key="frame" x="0.0" y="164" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="EdX-vs-F9a"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-Yz-NXm" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="252" width="343" height="293"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkF-Jb-TDP" userLabel="hideChartView">
+                                <rect key="frame" x="16" y="252" width="343" height="293"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a stock from the picker." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfF-7N-sj7">
+                                        <rect key="frame" x="40" y="123.5" width="263" height="46.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -102,13 +111,16 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook Inc, Test Name Test Name Test Name Test Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-Nk-WS2">
+                                <rect key="frame" x="20" y="173" width="335" height="46.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVx-sE-miL" userLabel="loadingView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="x6s-FV-nHc">
+                                        <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="K2Q-ho-1E2"/>
                                             <constraint firstAttribute="width" constant="40" id="SNI-s2-mld"/>
@@ -182,29 +194,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4ii-6Z-dfy">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vmw-iy-P0e">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiN-ba-1R0">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="8" y="8" width="114.5" height="146"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoN-ch-veE">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="130.5" y="8" width="114" height="146"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYU-qx-qvw">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="252.5" y="8" width="114.5" height="146"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -217,27 +225,22 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zUD-eR-zMK">
+                                        <rect key="frame" x="0.0" y="162" width="375" height="161.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga1-tu-gMx">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="8" y="8" width="114.5" height="145.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0k4-tU-SoV">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="130.5" y="8" width="114" height="145.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gm-ax-zeE">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="252.5" y="8" width="114.5" height="145.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -250,27 +253,22 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oy6-Fu-y0r">
+                                        <rect key="frame" x="0.0" y="323.5" width="375" height="162"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIp-2z-ngM">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="8" y="8" width="114.5" height="146"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDp-MF-f2a">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="130.5" y="8" width="114" height="146"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yo9-XW-54a">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="252.5" y="8" width="114.5" height="146"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -280,27 +278,22 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Ru-9T-Nyn">
+                                        <rect key="frame" x="0.0" y="485.5" width="375" height="161.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdF-wp-IZj">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="8" y="8" width="114.5" height="145.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0Z-kP-dEQ">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="130.5" y="8" width="114" height="145.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzT-9U-elJ">
-                                                <color key="backgroundColor" red="0.2220701162" green="0.40611510899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="252.5" y="8" width="114.5" height="145.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -358,26 +351,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sa1-Uh-x5N">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgW-yM-fow">
+                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
                                 <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WH0-6H-ya2"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWK-aZ-tqP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="HIy-jO-J1u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="clickDoneButton:" destination="0B8-6v-Xe1" eventType="touchUpInside" id="xxN-sd-8RN"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WH0-6H-ya2">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="290"/>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="WH0-6H-ya2" secondAttribute="bottom" id="29u-z1-CzT"/>
-                                    <constraint firstAttribute="trailing" secondItem="WH0-6H-ya2" secondAttribute="trailing" id="4AA-KD-pXc"/>
-                                    <constraint firstItem="WH0-6H-ya2" firstAttribute="leading" secondItem="sa1-Uh-x5N" secondAttribute="leading" id="5lU-FE-wzf"/>
-                                    <constraint firstItem="WH0-6H-ya2" firstAttribute="top" secondItem="sa1-Uh-x5N" secondAttribute="top" id="YMu-FL-41p"/>
-                                    <constraint firstAttribute="height" constant="216" id="Z0p-8n-LJL"/>
+                                    <constraint firstItem="WH0-6H-ya2" firstAttribute="top" secondItem="XWK-aZ-tqP" secondAttribute="bottom" id="L0a-Tn-FUC"/>
+                                    <constraint firstAttribute="trailing" secondItem="XWK-aZ-tqP" secondAttribute="trailing" id="P6S-rI-LRC"/>
+                                    <constraint firstItem="WH0-6H-ya2" firstAttribute="leading" secondItem="YgW-yM-fow" secondAttribute="leading" id="QbG-hD-FJd"/>
+                                    <constraint firstAttribute="height" constant="350" id="YdJ-Iz-u2f"/>
+                                    <constraint firstItem="XWK-aZ-tqP" firstAttribute="top" secondItem="YgW-yM-fow" secondAttribute="top" id="aju-xy-as6"/>
+                                    <constraint firstAttribute="trailing" secondItem="WH0-6H-ya2" secondAttribute="trailing" id="lTQ-7R-DTL"/>
+                                    <constraint firstItem="XWK-aZ-tqP" firstAttribute="leading" secondItem="YgW-yM-fow" secondAttribute="leading" id="pBV-zZ-8Fa"/>
+                                    <constraint firstAttribute="bottom" secondItem="WH0-6H-ya2" secondAttribute="bottom" id="zkc-kw-OPL"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sa1-Uh-x5N" secondAttribute="trailing" id="Dmy-0T-zpf"/>
-                            <constraint firstItem="sa1-Uh-x5N" firstAttribute="leading" secondItem="JDd-bX-5kr" secondAttribute="leading" id="Rf4-Og-P1Q"/>
-                            <constraint firstItem="RWg-Gr-rOm" firstAttribute="top" secondItem="sa1-Uh-x5N" secondAttribute="bottom" id="fqH-NY-qhk"/>
+                            <constraint firstItem="YgW-yM-fow" firstAttribute="leading" secondItem="JDd-bX-5kr" secondAttribute="leading" id="4Xd-Mw-kYI"/>
+                            <constraint firstItem="RWg-Gr-rOm" firstAttribute="top" secondItem="YgW-yM-fow" secondAttribute="bottom" id="KVW-pc-2tu"/>
+                            <constraint firstAttribute="trailing" secondItem="YgW-yM-fow" secondAttribute="trailing" id="dJc-zv-vif"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9Hu-3R-nIj" appends="YES" id="5em-Yg-EtC"/>
@@ -394,7 +404,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1471" y="412"/>
+            <point key="canvasLocation" x="1469.5999999999999" y="411.544227886057"/>
         </scene>
     </scenes>
 </document>

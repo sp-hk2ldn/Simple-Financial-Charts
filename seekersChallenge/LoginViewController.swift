@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     @IBAction func twitterLoginButtonAction(_ sender: TWTRLogInButton) {
         Twitter.sharedInstance().logIn(withMethods: .webBased, completion: { (session, error) in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "error")
             }
             self.didSignInWithTwitter()
         })
@@ -40,7 +40,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     }
     
     fileprivate func configureUI(){
-//        self.view.backgroundColor = FlatSkyBlue()
         self.navigationController?.hidesNavigationBarHairline = true
         self.setThemeUsingPrimaryColor(FlatSkyBlue(), with: .contrast)
         

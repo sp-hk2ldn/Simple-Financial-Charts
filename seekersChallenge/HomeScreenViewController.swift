@@ -111,6 +111,7 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate, ChartView
     
     //MARK:- Did Choose Stock Delegate
     func didChooseStock(ticker: String) {
+        if chosenStockTicker == ticker { return } //stop unnecessary API calls
         chosenStockTicker = ticker
         stockNameLabel.text = ticker
         loadingView.isHidden = false

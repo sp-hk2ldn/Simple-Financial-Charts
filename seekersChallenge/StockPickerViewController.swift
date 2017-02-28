@@ -16,10 +16,12 @@ class StockPickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     //MARK:- Actions
     @IBAction func tapOutsidePicker(_ sender: UITapGestureRecognizer) {
-        dismiss(animated: true, completion: nil)
-        didPickStockDelegate?.didChooseStock(ticker: pickedSymbol)
+        dismissAndTriggerDelegate()
     }
     
+    @IBAction func clickDoneButton(_ sender: UIButton) {
+        dismissAndTriggerDelegate()
+    }
     
     //MARK:- Variables
     let stockSymbols = ["AAPL", "FB", "GOOGL"]
@@ -31,6 +33,11 @@ class StockPickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         pickerView.delegate = self
         pickerView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    fileprivate func dismissAndTriggerDelegate(){
+        dismiss(animated: true, completion: nil)
+        didPickStockDelegate?.didChooseStock(ticker: pickedSymbol)
     }
     
     //MARK:- PickerView

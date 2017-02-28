@@ -13,9 +13,6 @@ class StockPrice: JSONMappable {
     var name: String = ""
     var startDate: String?
     var endDate: String?
-    private var dataPointsDictionary = [Date:Float]()
-    var dataPointsArray: [(Date, Float)] = []
-    
     var dates: [Date] = []
     var openPrices: [Double] = []
     var highPrice: [Double] = []
@@ -47,10 +44,6 @@ class StockPrice: JSONMappable {
             self.closePrice.append(dataPointSubArray[4].doubleValue)
             self.tradingVolume.append(dataPointSubArray[5].intValue)
             self.exDividend.append(dataPointSubArray[6].doubleValue)
-            let splitRatioTest = dataPointSubArray[7].floatValue
-            if splitRatioTest < 1.0 || splitRatioTest > 1.0 {
-                print("DIFFERENT SPLIT RATIO: \(splitRatioTest)")
-            }
             self.splitRatio.append(dataPointSubArray[7].intValue)
             self.adjOpen.append(dataPointSubArray[8].doubleValue)
             self.adjHigh.append(dataPointSubArray[9].doubleValue)
@@ -60,18 +53,14 @@ class StockPrice: JSONMappable {
             
             
             
-            self.dataPointsDictionary[dateFromString] = dataPointSubArray[1].floatValue
-//            if self.dates.count == 250 {
-//                break
-//            }
-            if dateFromString.compare(Date(timeIntervalSinceNow: -31536000)) == .orderedAscending {
+//            self.dataPointsDictionary[dateFromString] = dataPointSubArray[1].floatValue //different method of mapping
+
+            //We just want the last years worth of data for now
+            let year:Double = 1 * 60 * 60 * 24 * 365
+            if dateFromString.compare(Date(timeIntervalSinceNow: -year)) == .orderedAscending {
                 break
             }
         }
-        
-        self.dataPointsArray = dataPointsDictionary
-            .map{ ($0.key, $0.value) }
-            .sorted(by: { $0.0.0.compare($0.1.0) == .orderedAscending })
     }
     
 }
