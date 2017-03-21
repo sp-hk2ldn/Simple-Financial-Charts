@@ -2,7 +2,7 @@
 
 This is a sample project to demonstrate how to login via oauth2 with twitter/google, get some financial data from the quandl financial api and display it in a line chart with iOS-Charts.
 
-#Instructions
+# Instructions
 
 
 if you don't have it already, install cocoapods: 
